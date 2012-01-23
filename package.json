@@ -1,0 +1,17 @@
+{
+  "name": "Awesome",
+  "description": "Private group RSS feed for Ivysoft",
+  "author": "Morteza Milani <mrtz.milani@googlemail.com>",
+  "version": "0.1.0",
+  "keywords": ["rss","feed"],
+  "repository": {
+    "type":"git",
+    "url":"git@ivysoft.co:awesome.git"
+  },
+  "dependencies": {
+    "now": ">= 0.2.0",
+    "express": ">= 0.0.2",
+    "request": ">= 0.2.0"
+  },
+  "main": "index.js"
+}
