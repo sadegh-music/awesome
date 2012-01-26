@@ -100,7 +100,7 @@
                       <a href="#" class="remove">x</a>\
                       <div class="msg">%msg%</div>\
                       <div class="title">\
-                        <a href="%link%">%title%</a>\
+                        <a href="%link%" target="_blank">%title%</a>\
                       </div>\
                       <div class="desc">%desc%</div>\
                     </div>';
@@ -123,7 +123,7 @@
     if (window.webkitNotifications && window.webkitNotifications.checkPermission() == 0) {
       var notification = window.webkitNotifications.createNotification(null,item.title,item.desc);
       notification.show();
-      if(count >= 1){
+      if(count > 1){
         notification = window.webkitNotifications.createNotification(null,'More links shared...',--count +' more items loaded');
         notification.show();
       }
