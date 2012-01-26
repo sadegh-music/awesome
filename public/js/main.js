@@ -8,7 +8,9 @@
       var totalHeight = $(document).height() - $(window).height();
       var scrollTop = $(this).scrollTop() + 10;
       if( scrollTop >= totalHeight ){
-        loadItems();
+        if($('.loading').length == 0){
+          loadItems();
+        }
       }
     });
 
