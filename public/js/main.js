@@ -15,7 +15,11 @@
     });
 
     $('#share-btn').click(function(){
-       if(window.webkitNotifications && window.webkitNotifications.checkPermission()) window.webkitNotifications.requestPermission();
+
+      $('#msg').val('');
+      $('#link').val('');
+
+      if(window.webkitNotifications && window.webkitNotifications.checkPermission()) window.webkitNotifications.requestPermission();
     });
     $('#remove-modal').modal({backdrop:false,keyboard:false});
 
