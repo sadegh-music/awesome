@@ -4,7 +4,7 @@ var express  = require('express'),
     nowjs    = require('now');
 
 var server = express.createServer();
-var everyone = nowjs.initialize(server);
+var everyone = nowjs.initialize(server,{socketio: {transports: ['xhr-polling','jsonp-polling','websocket']}});
 
 server.use(server.router);
 server.use(express.static(__dirname + '/public'));
