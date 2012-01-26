@@ -7,7 +7,7 @@
 // -----------
 
 form {
-//  margin-bottom: @baseline;
+  margin-bottom: @baseline;
 }
 
 // Groups of fields with labels on top (legends)
@@ -16,12 +16,11 @@ fieldset {
   padding-top: @baseline;
   legend {
     display: block;
-    padding-right: 150px;
-    #font > .title2(@basefont * 1.5,normal);
+    padding-left: 150px;
+    font-size: @basefont * 1.5;
     line-height: 1;
     color: @grayDark;
-    padding-top:20px;
-    *padding: 0 145px 5px 0; /* IE6-7 */
+    *padding: 0 0 5px 145px; /* IE6-7 */
     *line-height: 1.5; /* IE6-7 */
   }
 }
@@ -45,15 +44,15 @@ label {
   padding-top: 6px;
   font-size: @basefont;
   line-height: @baseline;
-  float: right;
+  float: left;
   width: 130px;
-  text-align: left;
+  text-align: right;
   color: @grayDark;
 }
 
 // Shift over the inside div to align all label's relevant content
 form .input {
-  margin-right: 150px;
+  margin-left: 150px;
 }
 
 // Checkboxs and radio buttons
@@ -297,7 +296,7 @@ textarea[readonly] {
 .actions {
   background: #f5f5f5;
   margin-top: @baseline;
-//  margin-bottom: @baseline;
+  margin-bottom: @baseline;
   padding: (@baseline - 1) 20px @baseline 150px;
   border-top: 1px solid #ddd;
   .border-radius(0 0 3px 3px);
@@ -351,13 +350,13 @@ textarea[readonly] {
     background: #f5f5f5;
     border: 1px solid #ccc;
     z-index: 2;
-    float: right;
+    float: left;
     display: block;
     width: auto;
     min-width: 16px;
     height: 18px;
-    padding: 4px 5px 4px 4px;
-    margin-left: -1px;
+    padding: 4px 4px 4px 5px;
+    margin-right: -1px;
     font-weight: normal;
     line-height: 18px;
     color: @grayLight;
@@ -377,13 +376,13 @@ textarea[readonly] {
 }
 .input-append {
   input {
-    float: right;
+    float: left;
     .border-radius(3px 0 0 3px);
   }
   .add-on {
     .border-radius(0 3px 3px 0);
-    margin-left: 0;
-    margin-right: -1px;
+    margin-right: 0;
+    margin-left: -1px;
   }
 }
 
@@ -427,8 +426,8 @@ textarea[readonly] {
   input[type=radio],
   input[type=checkbox] {
     margin-bottom: 0;
-    margin-right: -20px;
-    float: right;
+    margin-left: -20px;
+    float: left;
   }
 }
 

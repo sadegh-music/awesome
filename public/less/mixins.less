@@ -45,24 +45,6 @@
 
 // Font Stacks
 #font {
-  .title( @size: 50px, @weight: bold, @lineHeight: 20px) {
-    font-family:'BMitra';
-    font-weight: @weight;
-    font-size:   @size;
-    line-height: @lineHeight;
-  }
-  .handwrite(@size: 25px, @weight: normal){
-    font-family:'DastNevis';
-    font-wieght: @weight;
-    font-size: @size;
-    line-height: 20px;
-  }
-  .title2(@size: 20px, @weight: bold){
-    font-family:'BYagut';
-    font-weight: @weight;
-    font-size: @size;
-    line-height: 25px;
-  }
   .shorthand(@weight: normal, @size: 14px, @lineHeight: 20px) {
     font-size: @size;
     font-weight: @weight;
@@ -88,23 +70,24 @@
   }
 }
 
-//positioning
-.position(@top,@right,@type: relative) {
-  position: @type;
-  top: @top;
-  right: @right;
+// Grid System
+.fixed-container() {
+  width: @siteWidth;
+  margin-left: auto;
+  margin-right: auto;
+  .clearfix();
 }
 .columns(@columnSpan: 1) {
   width: (@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1));
 }
 .offset(@columnOffset: 1) {
-  margin-right: (@gridColumnWidth * @columnOffset) + (@gridGutterWidth * (@columnOffset - 1)) + @extraSpace;
+  margin-left: (@gridColumnWidth * @columnOffset) + (@gridGutterWidth * (@columnOffset - 1)) + @extraSpace;
 }
 // Necessary grid styles for every column to make them appear next to each other horizontally
 .gridColumn() {
   display: inline;
-  float: right;
-  margin-right: @gridGutterWidth;
+  float: left;
+  margin-left: @gridGutterWidth;
 }
 // makeColumn can be used to mark any element (e.g., .content-primary) as a column without changing markup to .span something
 .makeColumn(@columnSpan: 1) {
@@ -177,25 +160,6 @@
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 
-#background {
-  .iphone() {
-    background:url('../img/iphone.png') no-repeat;
-    width:240px;
-    height:360px;
-//    padding:99px 21px 165px 21px;
-    padding: 99px 45px 165px 21px;
-    margin-right: -24px;
-    overflow:hidden;
-  }
-  
-  .android() {
-    background:url('../img/nexus.png') no-repeat;
-    width:186px;
-    height:290px;
-    padding:70px 30px 122px 30px;
-    overflow:hidden;
-  }
-}
 // Gradients
 #gradient {
   .horizontal (@startColor: #555, @endColor: #333) {

@@ -16,12 +16,87 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <!-- CSS: implied media="all" -->
-  <link rel="stylesheet" href="css/style.css">
-  
+  <!--link rel="stylesheet" href="css/style.css"-->
+  <link rel="stylesheet/less" href="less/style.less">
+  <script src="js/libs/less-1.1.4.min.js"></script>
   <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
   <script src="js/libs/respond.min.js"></script>
 </head>
 <body>
 
+  <div class="container">
+
+    <div class="content">
+      <div class="page-header">
+        <h1>Awesome! <small><a id="share-btn" href="#" class="btn large" data-controls-modal="modal" data-backdrop="static" data-keyboard="true">Share</a> your links with the rest of us!</small></h1>
+      </div>
+      <div id="items" class="infinitescroll row">
+      </div>
+    </div>
+
+    <footer>
+      <p>© Pichak.co 2012</p>
+    </footer>
+
+  </div>
+
+  <div id="modal" class="modal hide fade">
+    <div class="modal-header">
+      <a href="#" class="close">x</a>
+      <h3>Share</h3>
+    </div>
+    <div class="modal-body">
+      <form id="form" name="form">
+        <fieldset>
+          <div class="clearfix">
+            <label for="msg">Describe the link</label>
+            <div class="input">
+              <input id="msg" name="msg" type="text" size="100" class="xlarge"/>
+            </div>
+          </div>
+          <div class="clearfix">
+            <label for="link">Link</label>
+            <div class="input">
+              <input id="link" name="msg" type="text" class="xlarge"/>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <p id="share-error" class="error hide">Error sharing your link. Try Again.</p>
+      <div style="float:right;">
+        <a id="save-btn" href="#" class="btn primary">Save</a>
+        <a id="cancel-btn" href="#" class="btn">Cancel</a>
+      </div>
+    </div>
+  </div>
+  
+  <div id="remove-modal" class="modal hide fade">
+    <div class="modal-header">
+      <a href="#" class="close">x</a>
+      <h3>Remove</h3>
+    </div>
+    <div class="modal-body">
+      <form id="remove-form" name="remove-form">
+        <fieldset>
+          <p>Do you really want to remove this beautiful link?</p>
+        </fieldset>
+        <input id="removeId" name="removeId" type="hidden"/>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <p id="remove-error" class="error hide">Error on removing item. Try Again.</p>
+      <div style="float:right;">
+        <a id="yes-btn" href="#" class="btn primary">Yes</a>
+        <a id="no-btn" href="#" class="btn">No</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/libs/modal.js"></script>
+  <script src="/nowjs/now.js"></script>  
+  <script src="js/main.js"></script>
 </body>
 </html>

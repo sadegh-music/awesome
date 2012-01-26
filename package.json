@@ -11,7 +11,8 @@
   "dependencies": {
     "now": ">= 0.2.0",
     "express": ">= 0.0.2",
-    "request": ">= 0.2.0"
+    "request": ">= 0.2.0",
+    "mongoose": ">= 2.4.0"
   },
   "main": "index.js"
 }
