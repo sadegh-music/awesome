@@ -9,8 +9,6 @@ var everyone = nowjs.initialize(server);
 server.use(server.router);
 server.use(express.static(__dirname + '/public'));
 
-//db.create({msg:'hey',link:'http://google.com',title:'title',desc:'description'},function(err){console.log(err)});
-
 everyone.now.load = function(cursor,callback) {
   var length = 20,
       self   = this;
