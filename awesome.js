@@ -60,11 +60,13 @@ everyone.now.share = function(data,cb){
       data.desc = '';
     }
 
-    db.create(data,function(err){
+    db.create(data,function(err,item){
 
-      cb(err)
+      cb(err);
 
-      everyone.now.onItem([data]);
+      if(!err){
+        everyone.now.onItem([item]);
+      }
 
     });
 
