@@ -110,12 +110,25 @@
                     </div>';
     
     $('.loading').remove();
+
+    // @TODO clean this mess! Do not do dirty work!
+    var prepend = false;
+
+    if(items.length == 1){
+      prepend = true;
+    }
+
     var temp;
+    
     items.forEach(function(item){
       temp = template.replace(/%(.{2,5})%/g,function(substr,index){
         return item[index];
       });
-      $('#items').prepend(temp);
+      if(!prepend){
+        $('#items').append(temp);
+      }else{
+        $('#items').prepend(temp);
+      }
     });
 
     if(items.length > 0){
