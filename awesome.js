@@ -1,6 +1,7 @@
 var express  = require('express'),
     request  = require('request'),
     db       = require('./lib/db'),
+    rss      = require('./lib/rss'),
     nowjs    = require('now');
 
 var server = express.createServer();
@@ -8,6 +9,10 @@ var everyone = nowjs.initialize(server,{socketio: {transports: ['xhr-polling','j
 
 server.use(server.router);
 server.use(express.static(__dirname + '/public'));
+
+server.get('/rss',function(req,res){
+  res.send(rss.generate());
+});
 
 everyone.now.load = function(cursor,callback) {
   var length = 20,
