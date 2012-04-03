@@ -10,7 +10,8 @@ var everyone = nowjs.initialize(server,{socketio: {transports: ['xhr-polling','j
 server.use(server.router);
 server.use(express.static(__dirname + '/public'));
 
-server.get('/rss',function(req,res){
+server.get('/rss.xml',function(req,res){
+  res.writeHead(200, {'Content-Type': 'application/rss+xml'});
   res.send(rss.generate());
 });
 
