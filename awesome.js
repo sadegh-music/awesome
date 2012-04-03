@@ -11,9 +11,10 @@ server.use(server.router);
 server.use(express.static(__dirname + '/public'));
 
 server.get('/rss.xml',function(req,res){
-  res.writeHead(200, {'Content-Type': 'application/rss+xml'});
-  res.send(rss.generate());
+  res.send(rss.generate(), {'Content-Type': 'application/rss+xml'});
 });
+
+rss.init();
 
 everyone.now.load = function(cursor,callback) {
   var length = 20,
@@ -72,6 +73,7 @@ everyone.now.share = function(data,cb){
 
       if(!err){
         everyone.now.onItem([item]);
+        rss.addItem(item);
       }
 
     });
