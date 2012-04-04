@@ -90,7 +90,7 @@ everyone.now.remove = function(id,callback){
     }else{
       callback(null);
     }
-
+    rss.init();
     everyone.now.onRemove(id);
   });
 }
